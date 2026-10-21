@@ -36,7 +36,16 @@ def _browser_exe():
         cands += ["/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge"]
     for n in ("google-chrome", "chrome", "chromium", "chromium-browser", "microsoft-edge"):
         cands.append(shutil.which(n))
-    return next((c for c in cands if c and os.path.exists(c)), None)
+    found = next((c for c in cands if c and os.path.exists(c)), None)
+    if found:
+        return found
+    try:                                            # sinon le Chromium installé par « python -m mona setup »
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as pw:
+            exe = pw.chromium.executable_path
+        return exe if os.path.exists(exe) else None
+    except Exception:
+        return None
 
 
 def _watchdog(stop):

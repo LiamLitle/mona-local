@@ -37,6 +37,17 @@ def normalise_url(brut):
     return u
 
 
+def launch_problem(e):
+    """Message clair quand le Chrome de test ne démarre pas."""
+    txt = str(e)
+    if "shared libraries" in txt or "missing dependencies" in txt or "install-deps" in txt:
+        return ("Il manque des bibliothèques système pour lancer le Chrome de test (courant sous Linux). "
+                "Lance une fois : sudo python -m playwright install-deps chromium")
+    if "Executable doesn't exist" in txt or "playwright install" in txt:
+        return "Le Chrome de test n'est pas installé. Lance « python -m mona setup » puis réessaie."
+    return "Le Chrome de test n'a pas pu démarrer : " + txt.strip().splitlines()[0][:160]
+
+
 def dom_at(dom, y, vh):
     """Textes et boutons visibles à la position y (coordonnées d'écran)."""
     def visible(items):
@@ -72,7 +83,7 @@ class Chrome:
             except Exception as e:
                 await self._pw.stop()
                 self._pw = None
-                raise CaptureError("Le Chrome de test n'est pas installé. Lance « python -m mona setup » puis réessaie.") from e
+                raise CaptureError(launch_problem(e)) from e
             self._visible = visible
         return self._browser
 

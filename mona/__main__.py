@@ -47,7 +47,18 @@ def cmd_doctor(_):
 def cmd_setup(_):
     print("Installation du Chrome de test (environ 150 Mo, une seule fois)...")
     r = subprocess.run([sys.executable, "-m", "playwright", "install", "chromium"])
-    return r.returncode
+    if r.returncode:
+        return r.returncode
+    try:
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as pw:
+            pw.chromium.launch(headless=True).close()
+    except Exception as e:
+        from .capture import launch_problem
+        print("\nLe Chrome de test est téléchargé mais ne démarre pas :\n  " + launch_problem(e))
+        return 1
+    print("Chrome de test prêt.")
+    return 0
 
 
 async def _analyze(args):
