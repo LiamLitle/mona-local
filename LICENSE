@@ -30,7 +30,7 @@ e) Remove or change the copyright notices, this license, or the credit required 
 3. CREDIT
 If you mention, show or publish anything that uses the Software or its models (a personal
 project, an article, a video, a repository, a web page), you must credit it visibly:
-"Mona by Liam Litle, https://github.com/LiamLitle/mona".
+"Mona by Liam Litle, https://github.com/LiamLitle/mona-local".
 You may not use the models in any product or project of yours without this credit.
 
 4. COMMERCIAL USE OR REDISTRIBUTION
@@ -75,7 +75,7 @@ modèles d'IA (*.onnx) et leurs réglages, et la documentation.
    e) Retirer ou modifier les mentions de droits d'auteur, cette licence ou le crédit exigé.
 3. Crédit : si tu mentionnes, montres ou publies quoi que ce soit qui utilise le Logiciel ou ses
    modèles (projet perso, article, vidéo, dépôt, page web), tu dois le créditer visiblement :
-   « Mona par Liam Litle, https://github.com/LiamLitle/mona ». Tu ne peux utiliser les modèles
+   « Mona par Liam Litle, https://github.com/LiamLitle/mona-local ». Tu ne peux utiliser les modèles
    dans aucun produit ou projet à toi sans ce crédit.
 4. Usage commercial ou redistribution : seulement avec l'autorisation écrite préalable de
    l'auteur (contact via https://github.com/LiamLitle).

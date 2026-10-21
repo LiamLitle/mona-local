@@ -67,7 +67,7 @@ async function enImage(fig) {
   y += hLegende;
   g.drawImage(img, P, y);
   g.fillStyle = '#6a6963'; g.font = `${11 * S}px "Geist Mono", monospace`;
-  g.fillText('Mona · mesures · liamlitle.github.io/mona', P, c.height - 16 * S);
+  g.fillText('Mona · mesures · mona.devliam.com', P, c.height - 16 * S);
   return await new Promise(ok => c.toBlob(ok, 'image/png'));
 }
 

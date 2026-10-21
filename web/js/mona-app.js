@@ -3,7 +3,7 @@
 //   initHistorique(racine)  : liste des analyses enregistrees, ouverture d'un rapport, import / export
 import * as core from './mona-core.js';
 import { API_URL } from './config.js';
-import { versEcrans, H as H_ECRAN } from './ecrans.js';
+import { versEcrans, H as H_ECRAN, SUR_TELEPHONE, MESSAGE_TELEPHONE } from './ecrans.js';
 import { chargerDetecteur, detecterEcran } from './detector.js';
 import { lancerAscii } from './ascii-anim.js';
 
@@ -103,13 +103,14 @@ function heatCanvas(att, data) {
 
 // ------------------------------------------------------------------ outil (accueil) : adresse d'un site OU image
 async function vueOutil(mode) {
+  if (SUR_TELEPHONE) { app.innerHTML = `<div class="alerte info"><b>${MESSAGE_TELEPHONE}</b><br>Tu peux déjà <a href="analyse.html#/demo">regarder un rapport d’exemple</a>.</div>`; return; }
   const peutAnalyser = !!API;
   mode = mode || (peutAnalyser ? 'url' : 'image');
   const deja = document.getElementById('url') ? document.getElementById('url').value : '';   // adresse tapee avant la fin du chargement
   app.innerHTML = `
     <div class="onglets-outil" role="tablist" aria-label="Que veux-tu analyser ?">
-      <button type="button" role="tab" data-m="url" aria-selected="${mode === 'url'}">Adresse d'un site</button>
-      <button type="button" role="tab" data-m="image" aria-selected="${mode === 'image'}">Image : capture, maquette, Figma</button>
+      <button type="button" role="tab" data-m="url" aria-selected="${mode === 'url'}">Un site</button>
+      <button type="button" role="tab" data-m="image" aria-selected="${mode === 'image'}">Une image (capture, maquette, Figma)</button>
     </div>
     <div id="mode-url" ${mode === 'url' ? '' : 'hidden'}>
       <form class="form" id="form" autocomplete="off">
@@ -118,18 +119,18 @@ async function vueOutil(mode) {
       </form>
       <p style="margin:10px 0 0"><button type="button" class="btn" id="onglet-ouvert">Analyser un site déjà ouvert dans un autre onglet</button></p>
       ${peutAnalyser ? '<p class="ana-note">Un serveur ouvre l\'adresse comme un navigateur et t\'envoie les images et le texte de la page ; il ne garde rien. Le reste est calculé <b>dans ton navigateur</b>.</p>'
-        : '<p class="ana-note">Mona ouvre le site <b>dans un nouvel onglet de ton navigateur</b>. Tu l’autorises à <b>enregistrer cet onglet uniquement</b> (pas ton écran, pas tes autres onglets), tu fais défiler la page, puis tu reviens ici : Mona lit les images enregistrées. Rien ne quitte ton appareil. Les images viennent de ton navigateur, la note est donc <b>indicative</b> (±5,5 points).</p>'}
+        : '<p class="ana-note">Mona ouvre ton site dans un nouvel onglet. Tu l’autorises à enregistrer <b>cet onglet seulement</b> (pas ton écran, pas tes autres onglets), tu fais défiler la page, puis tu reviens ici. Rien ne quitte ton ordinateur. Les images viennent de ton navigateur, donc la note est <b>indicative</b> (environ 5 points sur 100 d’écart).</p>'}
     </div>
     <div id="mode-image" ${mode === 'image' ? '' : 'hidden'}>
       <div class="depot" id="depot" tabindex="0" role="button" aria-label="Choisir ou déposer une image">
-        <b>Dépose une image ici</b>
+        <b>Dépose ton image ici</b>
         <span>PNG, JPG ou WebP : capture d’écran, maquette, export Figma. Tu peux aussi la coller (Ctrl + V). Les images longues sont découpées en écrans.</span>
         <button class="btn btn-plein" type="button" id="choisir-img">Choisir une image</button>
         <input type="file" id="fichier-img" accept="image/*" hidden>
       </div>
-      <p class="ana-note">Mona lit l'interface depuis l'image avec son détecteur d'éléments (environ 38 Mo la première fois, puis en cache). La note est <b>indicative</b> : écart moyen d'environ 5,5 points sur 100 avec la lecture d'une vraie page. <a href="https://liamlitle.github.io/mona/detecteur.html">Tester le détecteur seul</a>.</p>
+      <p class="ana-note">Mona lit l'interface depuis l'image avec son détecteur d'éléments (environ 38 Mo la première fois, puis en cache). La note est <b>indicative</b> : écart moyen d'environ 5,5 points sur 100 avec la lecture d'une vraie page. <a href="https://mona.devliam.com/detecteur.html">Tester le détecteur seul</a>.</p>
     </div>
-    <p class="ana-note">Le regard, le cerveau, les règles et la note sont calculés <b>dans ton navigateur</b> (modèles ONNX, environ 20 Mo la première fois, puis en cache). Le rapport reste sur ton appareil. <a href="https://liamlitle.github.io/mona/benchmarks.html#methode">La méthode</a>.</p>
+    <p class="ana-note">Le regard, le cerveau, les règles et la note sont calculés <b>dans ton navigateur</b> (modèles ONNX, environ 20 Mo la première fois, puis en cache). Le rapport reste sur ton appareil. <a href="https://mona.devliam.com/benchmarks.html#methode">La méthode</a>.</p>
     <p class="petit" id="lien-histo" style="margin-top:14px"></p>`;
   app.querySelectorAll('.onglets-outil button').forEach(b => b.onclick = () => vueOutil(b.dataset.m));
   document.getElementById('form').onsubmit = e => { e.preventDefault(); const u = document.getElementById('url').value; peutAnalyser ? lancer(u) : lancerOnglet(u); };

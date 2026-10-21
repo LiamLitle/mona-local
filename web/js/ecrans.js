@@ -1,6 +1,11 @@
 // Image envoyee (capture, maquette, export Figma) -> ecrans de 1440 x 900, comme pour une page en ligne.
 export const W = 1440, H = 900, MAX_ECRANS = 6;
 
+// Telephones et tablettes : l'analyse (modeles de 60 Mo, calcul lourd) n'y est pas proposee
+export const SUR_TELEPHONE = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent))
+  || (matchMedia('(pointer: coarse)').matches && Math.min(screen.width, screen.height) < 820);
+export const MESSAGE_TELEPHONE = 'L’analyse n’est pas disponible sur téléphone. Essaie sur un ordinateur (Chrome, Edge ou Firefox).';
+
 export async function versEcrans(bmp) {
   const h = Math.max(1, Math.round(bmp.height * W / bmp.width));
   const tops = [];
