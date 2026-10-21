@@ -1,0 +1,2 @@
+# Facultatif : vraie fenêtre d application (sinon Chrome ou Edge en mode application)
+pywebview>=5

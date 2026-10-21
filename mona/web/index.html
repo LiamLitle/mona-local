@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<title>Mes analyses — Mona</title>
+<title>Mona en local</title>
 <meta name="description" content="Mona tourne sur ton ordinateur : colle une adresse, Mona l'analyse.">
 <link rel="preload" href="fonts/InstrumentSerif.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -59,13 +59,17 @@ footer{border-top:1px solid var(--trait);padding:26px 40px;color:var(--pierre);f
 <header class="nav">
   <a class="marque" href="index.html">mona</a>
   <nav class="liens" id="menu" aria-label="Navigation">
-    <a class="lien" href="index.html">Analyser</a>
-    <a class="lien" aria-current="page" href="analyse.html">Mes analyses</a>
+    <a class="lien" aria-current="page" href="index.html">Analyser</a>
+    <a class="lien" href="analyse.html">Mes analyses</a>
     <a class="lien" href="https://mona.devliam.com/benchmarks.html">Mesures</a>
   </nav>
 </header>
-<main><div class="app" id="app" aria-live="polite"></div></main>
-<footer><span>Mona · usage personnel, non commercial · voir LICENSE</span><span id="stockage"></span></footer>
-<script type="module">import { initHistorique } from './js/mona-app.js'; initHistorique(document.getElementById('app'));</script>
+<main>
+  <h1 style="font:400 clamp(44px,6vw,84px)/1 var(--serif);margin:0 0 14px">Analyser un site</h1>
+  <p style="color:var(--pierre);max-width:640px;margin:0 0 30px">Colle une adresse : Mona l’ouvre dans un Chrome de test, la fait défiler, devine où les yeux se posent et te donne une note de lisibilité sur 100. Tout se passe sur ton ordinateur, rien n’est envoyé.</p>
+  <div class="app" id="app" aria-live="polite"></div>
+</main>
+<footer><span>Mona · usage personnel, non commercial</span><a href="https://github.com/LiamLitle/mona-local/blob/main/docs/MODELS.md" target="_blank" rel="noopener">Où sont les modèles d’IA ?</a><a href="https://github.com/LiamLitle/mona-local/blob/main/TERMS.md" target="_blank" rel="noopener">Conditions</a></footer>
+<script type="module">import { initOutil } from './js/app.js'; initOutil(document.getElementById('app'));</script>
 </body>
 </html>
