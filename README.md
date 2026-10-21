@@ -1,6 +1,6 @@
 # Mona (local)
 
-<p align="center"><img src="docs/banner.gif" alt="Mona: Laocoön statue drawn in ASCII with a scanning light" width="420"></p>
+<p align="center"><img src="docs/banner.gif" alt="Mona: Michelangelo's David drawn in ASCII with a scanning light" width="420"></p>
 
 <p align="center"><img src="docs/demo.gif" alt="Mona analyzing a web page: ASCII animation, then the report" width="720"></p>
 
