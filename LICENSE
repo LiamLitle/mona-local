@@ -1,0 +1,88 @@
+MONA PERSONAL USE LICENSE, version 1.0
+
+Copyright (c) 2026 Liam Litle (https://github.com/LiamLitle)
+
+This is a "source-available" license. It is NOT an open-source license.
+Une traduction française non officielle suit ; en cas de différence, la version anglaise prévaut.
+
+"Software" means everything in this repository: the code, the web interface, the
+AI model files (*.onnx) and their settings files, and the documentation.
+
+1. WHAT YOU MAY DO
+You may download the Software and use it on your own computers, for yourself, for
+personal, non-commercial purposes (learning, research, hobby projects, checking your own
+non-commercial websites). You may read and modify the code for your own use.
+
+2. WHAT YOU MAY NOT DO
+a) Redistribute: you may not copy, publish, upload, share, sell, lend, sublicense or
+   otherwise give the Software, any part of it, or any modified version, to anyone else.
+   (Rights that GitHub's Terms of Service give to other GitHub users, such as viewing or
+   forking this public repository on GitHub, are not affected by this license.)
+b) Resell or commercialize it: you may not sell the Software or charge for access to it.
+c) Make money with it: you may not use the Software, its models or its output, directly or
+   indirectly, to earn money or in any for-profit activity. This includes client work,
+   paid services, a product or service of a company, advertising-funded sites, and
+   offering it online as a service (even for free) to other people.
+d) Train or improve other AI models with the model files, or extract their weights into
+   another model.
+e) Remove or change the copyright notices, this license, or the credit required below.
+
+3. CREDIT
+If you mention, show or publish anything that uses the Software or its models (a personal
+project, an article, a video, a repository, a web page), you must credit it visibly:
+"Mona by Liam Litle, https://github.com/LiamLitle/mona".
+You may not use the models in any product or project of yours without this credit.
+
+4. COMMERCIAL USE OR REDISTRIBUTION
+Anything forbidden above can be allowed only with the author's written permission,
+obtained beforehand. Contact the author through https://github.com/LiamLitle.
+
+5. THIRD-PARTY MATERIAL
+The models were trained with data and pretrained weights that have their own terms (see
+NOTICE.md). This license does not give you more rights than those terms allow, and does not
+replace them. You are responsible for respecting them.
+
+6. NO WARRANTY, NO LIABILITY
+The Software is provided "as is", without warranty of any kind. Scores and predictions are
+estimates, not guarantees. The author is not liable for any damage arising from its use.
+The tool opens the web addresses you give it: you are responsible for analyzing only
+websites you are allowed to visit.
+
+7. TERMINATION
+If you break these terms, your rights end automatically and you must delete all copies.
+
+------------------------------------------------------------------------------------
+LICENCE D'USAGE PERSONNEL DE MONA, version 1.0 (traduction française non officielle)
+
+« Logiciel » désigne tout le contenu de ce dépôt : le code, l'interface web, les fichiers de
+modèles d'IA (*.onnx) et leurs réglages, et la documentation.
+
+1. Ce que tu peux faire : télécharger le Logiciel et l'utiliser sur tes propres ordinateurs,
+   pour toi, à titre personnel et non commercial (apprendre, rechercher, projets perso,
+   vérifier tes propres sites non commerciaux). Tu peux lire et modifier le code pour toi.
+2. Ce que tu ne peux pas faire :
+   a) Redistribuer : copier, publier, envoyer, partager, vendre, prêter, sous-licencier ou
+      donner à quelqu'un d'autre le Logiciel, une partie ou une version modifiée. (Les droits
+      que les conditions de GitHub donnent aux autres utilisateurs, comme voir ou « forker »
+      ce dépôt public sur GitHub, ne sont pas touchés.)
+   b) Revendre ou commercialiser : vendre le Logiciel ou faire payer son accès.
+   c) Gagner de l'argent avec : l'utiliser, lui ou ses modèles ou ses résultats, directement ou
+      indirectement, pour gagner de l'argent ou dans une activité lucrative : travail pour des
+      clients, service payant, produit ou service d'une entreprise, site financé par la
+      publicité, mise en ligne comme service (même gratuit) pour d'autres personnes.
+   d) Entraîner ou améliorer d'autres modèles d'IA avec les fichiers de modèles, ou en extraire
+      les poids vers un autre modèle.
+   e) Retirer ou modifier les mentions de droits d'auteur, cette licence ou le crédit exigé.
+3. Crédit : si tu mentionnes, montres ou publies quoi que ce soit qui utilise le Logiciel ou ses
+   modèles (projet perso, article, vidéo, dépôt, page web), tu dois le créditer visiblement :
+   « Mona par Liam Litle, https://github.com/LiamLitle/mona ». Tu ne peux utiliser les modèles
+   dans aucun produit ou projet à toi sans ce crédit.
+4. Usage commercial ou redistribution : seulement avec l'autorisation écrite préalable de
+   l'auteur (contact via https://github.com/LiamLitle).
+5. Éléments tiers : les modèles ont été entraînés avec des données et des poids préentraînés qui
+   ont leurs propres conditions (voir NOTICE.md). Cette licence ne te donne pas plus de droits.
+6. Aucune garantie, aucune responsabilité : le Logiciel est fourni « tel quel ». Les notes et
+   prédictions sont des estimations. L'outil ouvre les adresses que tu lui donnes : n'analyse
+   que des sites que tu as le droit de visiter.
+7. Fin des droits : si tu enfreins ces conditions, tes droits s'arrêtent et tu dois supprimer
+   toutes les copies.

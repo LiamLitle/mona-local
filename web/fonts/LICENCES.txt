@@ -1,0 +1,5 @@
+Polices de la page (SIL Open Font License 1.1, telechargees depuis Google Fonts) :
+- Instrument Serif et Instrument Sans (Instrument)
+- Geist Mono (Vercel)
+Lenis (js/lenis.min.js) : licence MIT, darkroomengineering.
+Texte de la licence OFL : voir OFL.txt

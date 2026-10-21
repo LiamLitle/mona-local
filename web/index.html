@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mona en local</title>
+<meta name="description" content="Mona tourne sur ton ordinateur : colle une adresse, Mona l'analyse.">
+<link rel="preload" href="fonts/InstrumentSerif.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Geist Mono';font-style:normal;font-weight:400 500;font-display:swap;src:url(fonts/GeistMono.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/InstrumentSans.woff2) format('woff2')}
+@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/InstrumentSerif.woff2) format('woff2')}
+:root{--nuit:#0D0D0C;--marbre:#ECEAE4;--pierre:#9C9A93;--cendre:#6a6963;--trait:#272725;
+  --serif:"Instrument Serif",Georgia,serif;--sans:"Instrument Sans",system-ui,sans-serif;--mono:"Geist Mono",ui-monospace,monospace}
+*{box-sizing:border-box}
+html{background:var(--nuit);scrollbar-width:thin;scrollbar-color:#2a2a28 transparent}
+::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-thumb{background:#2a2a28;border-radius:3px}
+body{margin:0;background:var(--nuit);color:var(--marbre);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}:focus-visible{outline:2px solid var(--marbre);outline-offset:3px}
+.nav{position:sticky;top:0;z-index:12;display:flex;align-items:baseline;gap:28px;padding:18px 40px;background:linear-gradient(var(--nuit) 55%,rgba(13,13,12,0))}
+.marque{font:400 30px/1 var(--serif);text-decoration:none;margin-right:auto}
+.btn{display:inline-block;font:500 15px var(--sans);text-decoration:none;color:var(--marbre);background:none;padding:11px 20px;border:1px solid var(--marbre);border-radius:2px;cursor:pointer}
+.btn:hover{background:var(--marbre);color:var(--nuit)}.btn-plein{background:var(--marbre);color:var(--nuit)}.btn-plein:hover{background:#fff}
+.nav .btn{padding:8px 15px;font-size:14px}
+main{max-width:1100px;margin:0 auto;padding:30px 40px 90px;min-height:70vh}
+footer{border-top:1px solid var(--trait);padding:26px 40px;color:var(--pierre);font:400 13px var(--mono);display:flex;gap:20px;flex-wrap:wrap}
+@media (max-width:860px){.nav{padding:14px 18px;gap:16px}main{padding:20px 18px 70px}}
+@media print{.nav,footer{display:none!important}html,body{background:#fff}main{padding:0;max-width:none}}
+
+/* Navigation : liens a droite, bouton « Menu » sur telephone */
+.liens{display:flex;gap:30px;align-items:baseline}
+@media (min-width:901px) and (max-width:1240px){.liens{gap:18px}.nav a.lien{font-size:14px}}
+
+.nav a.lien{position:relative;color:var(--pierre);text-decoration:none;font-size:15px;padding:4px 0}
+.nav a.lien::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--marbre);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.nav a.lien:hover,.nav a.lien[aria-current]{color:var(--marbre)}
+.nav a.lien:hover::after,.nav a.lien[aria-current]::after{transform:scaleX(1)}
+.menu-btn{display:none;font:500 14px var(--sans);color:var(--marbre);background:none;border:1px solid var(--trait);padding:8px 14px;border-radius:2px;cursor:pointer}
+@media (max-width:900px){
+  .menu-btn{display:inline-block;position:relative;z-index:12}
+  .nav .nav-cta{display:none}
+  .liens{position:fixed;inset:0;z-index:11;flex-direction:column;justify-content:center;gap:6px;padding:90px 28px 40px;background:rgba(13,13,12,.97);
+    opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s ease,transform .25s ease,visibility .25s}
+  .nav.ouvert .liens{opacity:1;visibility:visible;transform:none}
+  .nav .liens a.lien{display:block;font:400 40px/1.15 var(--serif);color:var(--marbre);padding:8px 0}
+  .nav .liens a.lien::after{display:none}
+  .liens .lien-cta{margin-top:18px;font:500 16px var(--sans)!important;border:1px solid var(--marbre);padding:13px 20px!important;text-align:center;width:max-content}
+  html.menu-ouvert{overflow:hidden}
+}
+
+</style>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="nav">
+  <a class="marque" href="index.html">mona</a>
+  <nav class="liens" id="menu" aria-label="Navigation">
+    <a class="lien" aria-current="page" href="index.html">Analyser</a>
+    <a class="lien" href="analyse.html">Mes analyses</a>
+    <a class="lien" href="https://liamlitle.github.io/mona/benchmarks.html">Mesures</a>
+  </nav>
+</header>
+<main>
+  <h1 style="font:400 clamp(44px,6vw,84px)/1 var(--serif);margin:0 0 14px">Analyser un site</h1>
+  <p style="color:var(--pierre);max-width:640px;margin:0 0 30px">Mona tourne sur ton ordinateur. Colle une adresse : Mona l'ouvre, la fait défiler, prédit où les yeux se posent et donne une note de lisibilité sur 100. Rien ne quitte cet ordinateur.</p>
+  <div class="app" id="app" aria-live="polite"></div>
+</main>
+<footer><span>Mona · usage personnel, non commercial · voir LICENSE</span></footer>
+<script type="module">import { initOutil } from './js/mona-app.js'; initOutil(document.getElementById('app'));</script>
+</body>
+</html>
