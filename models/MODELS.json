@@ -63,8 +63,8 @@
     },
     {
       "file": "plan_b_params.json",
-      "bytes": 388,
-      "sha256": "4ceb3393d1780c8a57a101cf1e14af578d12374d387f06a762c261bb56700852",
+      "bytes": 370,
+      "sha256": "6e60a821a845cf92c4334050e45f8911eb0b6d918decf61126b354fbc80c65b9",
       "role": "Réglages du « plan B »",
       "task": "Paramètres calibrés pour lire une image comme si c'était le code d'une page.",
       "input": "-",

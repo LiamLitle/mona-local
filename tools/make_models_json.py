@@ -24,10 +24,13 @@ INFO = {
     "plan_b_params.json": dict(role="Réglages du « plan B »", task="Paramètres calibrés pour lire une image comme si c'était le code d'une page.",
                                input="-", output="-", trained_on="Calibré sur des sites jamais vus", base="-", license="Personal Use"),
 }
+CRLF, LF = b"\r\n", b"\n"
 out = {"version": 1, "files": []}
 for f in sorted(D.iterdir()):
     if f.name in INFO:
         b = f.read_bytes()
+        if f.suffix == ".json":
+            b = b.replace(CRLF, LF)                  # mêmes octets quel que soit le système
         out["files"].append({"file": f.name, "bytes": len(b), "sha256": hashlib.sha256(b).hexdigest(), **INFO[f.name]})
 (D / "MODELS.json").write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(len(out["files"]), "fichiers décrits")
