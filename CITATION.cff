@@ -3,7 +3,7 @@ message: "If you show or publish anything that uses Mona, credit it as below (se
 title: "Mona: gaze, brain reaction and readability analysis for web pages"
 type: software
 authors:
-  - alias: "Liam Litle"
+  - alias: "Liam DB"
 repository-code: "https://github.com/LiamLitle/mona-local"
 url: "https://mona.devliam.com/"
 abstract: "Mona predicts where eyes land on a web page, how the brain reacts, and scores readability out of 100. Runs locally."

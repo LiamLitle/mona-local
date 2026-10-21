@@ -1,6 +1,6 @@
 MONA PERSONAL USE LICENSE, version 1.0
 
-Copyright (c) 2026 Liam Litle (https://github.com/LiamLitle)
+Copyright (c) 2026 Liam DB
 
 This is a "source-available" license. It is NOT an open-source license.
 Une traduction française non officielle suit ; en cas de différence, la version anglaise prévaut.
@@ -30,12 +30,12 @@ e) Remove or change the copyright notices, this license, or the credit required 
 3. CREDIT
 If you mention, show or publish anything that uses the Software or its models (a personal
 project, an article, a video, a repository, a web page), you must credit it visibly:
-"Mona by Liam Litle, https://github.com/LiamLitle/mona-local".
+"Mona by Liam DB, https://github.com/LiamLitle/mona-local".
 You may not use the models in any product or project of yours without this credit.
 
 4. COMMERCIAL USE OR REDISTRIBUTION
 Anything forbidden above can be allowed only with the author's written permission,
-obtained beforehand. Contact the author through https://github.com/LiamLitle.
+obtained beforehand. Contact the author by email: brobronom [at] gmail [dot] com.
 
 5. THIRD-PARTY MATERIAL
 The models were trained with data and pretrained weights that have their own terms (see
@@ -75,10 +75,10 @@ modèles d'IA (*.onnx) et leurs réglages, et la documentation.
    e) Retirer ou modifier les mentions de droits d'auteur, cette licence ou le crédit exigé.
 3. Crédit : si tu mentionnes, montres ou publies quoi que ce soit qui utilise le Logiciel ou ses
    modèles (projet perso, article, vidéo, dépôt, page web), tu dois le créditer visiblement :
-   « Mona par Liam Litle, https://github.com/LiamLitle/mona-local ». Tu ne peux utiliser les modèles
+   « Mona par Liam DB, https://github.com/LiamLitle/mona-local ». Tu ne peux utiliser les modèles
    dans aucun produit ou projet à toi sans ce crédit.
 4. Usage commercial ou redistribution : seulement avec l'autorisation écrite préalable de
-   l'auteur (contact via https://github.com/LiamLitle).
+   l'auteur (contact par e-mail : brobronom [at] gmail [dot] com).
 5. Éléments tiers : les modèles ont été entraînés avec des données et des poids préentraînés qui
    ont leurs propres conditions (voir NOTICE.md). Cette licence ne te donne pas plus de droits.
 6. Aucune garantie, aucune responsabilité : le Logiciel est fourni « tel quel ». Les notes et

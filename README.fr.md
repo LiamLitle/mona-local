@@ -111,7 +111,7 @@ Le modèle du cerveau vient d'une seule personne : une indication, pas un diagno
 
 ## Licence et cadre légal
 
-**Mona Personal Use License** ([LICENSE](LICENSE), avec traduction française) : utilise-la pour toi, gratuitement. **Pas** de redistribution, **pas** de vente, **pas** d'usage pour gagner de l'argent (y compris travail pour des clients et services en ligne), **pas** d'entraînement d'autres modèles avec, et un **crédit visible** (« Mona par Liam Litle ») dès que tu montres ou publies quelque chose qui l'utilise. C'est du *source-available*, pas de l'open source. Pour tout autre usage, demande d'abord à l'auteur.
+**Mona Personal Use License** ([LICENSE](LICENSE), avec traduction française) : utilise-la pour toi, gratuitement. **Pas** de redistribution, **pas** de vente, **pas** d'usage pour gagner de l'argent (y compris travail pour des clients et services en ligne), **pas** d'entraînement d'autres modèles avec, et un **crédit visible** (« Mona par Liam DB ») dès que tu montres ou publies quelque chose qui l'utilise. C'est du *source-available*, pas de l'open source. Pour tout autre usage, demande d'abord à l'auteur.
 
 - [Conditions d'utilisation](TERMS.md) · [Politique de confidentialité](PRIVACY.md) · [Données et licences tierces](NOTICE.md)
 - Les données d'entraînement et les poids préentraînés ont leurs propres conditions ; le modèle du cerveau dérive d'images réservées à la recherche et ne s'utilise qu'en recherche non commerciale.

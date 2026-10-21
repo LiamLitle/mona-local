@@ -111,7 +111,7 @@ The brain model comes from a single subject: an indication, not a diagnosis. Mon
 
 ## License and legal
 
-**Mona Personal Use License** ([LICENSE](LICENSE), with French translation): use it for yourself, for free. **No** redistribution, **no** selling, **no** use to make money (including client work and online services), **no** training other models with it, and a **visible credit** ("Mona by Liam Litle") whenever you show or publish something that uses it. It is *source-available*, not open source. For anything else, ask the author first.
+**Mona Personal Use License** ([LICENSE](LICENSE), with French translation): use it for yourself, for free. **No** redistribution, **no** selling, **no** use to make money (including client work and online services), **no** training other models with it, and a **visible credit** ("Mona by Liam DB") whenever you show or publish something that uses it. It is *source-available*, not open source. For anything else, ask the author first.
 
 - [Terms of use](TERMS.md) · [Privacy policy](PRIVACY.md) · [Third-party data and licenses](NOTICE.md)
 - Training data and pretrained weights have their own terms; the brain model derives from research-only images and is for non-commercial research use.
