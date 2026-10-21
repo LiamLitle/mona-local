@@ -1,5 +1,9 @@
 # Mona (en local)
 
+<p align="center"><img src="docs/banner.gif" alt="Mona: Laocoön statue drawn in ASCII with a scanning light" width="420"></p>
+
+<p align="center"><img src="docs/demo.gif" alt="Mona analyzing a web page: ASCII animation, then the report" width="720"></p>
+
 Colle une adresse de site. Mona l'ouvre dans ton propre Chrome, la fait défiler, prédit **où les yeux se posent**, **comment le cerveau réagit**, vérifie 6 règles de lisibilité et donne une **note sur 100**. Tout se passe sur ton ordinateur : les modèles d'IA (ONNX) tournent dans ton navigateur, rien n'est envoyé ailleurs, sauf la visite du site que tu analyses.
 
 English: [README.md](README.md) · Site et mesures : <https://liamlitle.github.io/mona/>
